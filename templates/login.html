@@ -1,0 +1,27 @@
+{% extends 'application.html' %}
+{% block content %}
+<br>
+<br>
+<br>
+<h2>ログイン画面</h2>
+
+{% with messages = get_flashed_messages() %}
+<!-- flashメッセージがあるときだけ -->
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li>{{message}}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+<form method="POST">
+    <label for="username">　登録名　</label>
+    <input type="text" name="username">
+    <br>
+    <label for="password">パスワード</label>
+    <input type="password" name="password">
+    <input type="submit" value="ログイン" >
+</form>
+{% endblock %}

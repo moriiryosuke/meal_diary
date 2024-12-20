@@ -1,0 +1,14 @@
+{% extends "application.html" %}
+{% block content %}
+    <h1>編集</h1>
+    <!-- action無しだと今のページURL呼ぶっぽい -->
+    <form method="POST">
+        <!-- labelは簡単に言うとユーザーが使いやすくなる -->
+        <label for="comment">コメント</label>
+        <input type="text" name="comment" value = {{post.comment}}>
+        <br>
+        <label for="pred">判定結果</label>
+        <input type="text" name="pred" value = {{post.pred}}>
+        <input type="submit" value="編集">
+    </form>
+{% endblock %}

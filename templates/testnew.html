@@ -1,0 +1,41 @@
+{% extends "application.html" %}
+{% block content %}
+<br>
+<br>
+<br>
+    <h2>新規投稿</h2>
+    {% with messages = get_flashed_messages() %}
+    <!-- flashメッセージがあるときだけ -->
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{message}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    <!-- action無しだと今のページURL呼ぶっぽい -->
+    <form action="/new" method="POST" enctype="multipart/form-data">
+        <!-- labelは簡単に言うとユーザーが使いやすくなる -->
+        <label for="comment">コメント</label>
+        <input type="text" name="comment">
+        <br>
+        <label for="gram">グラム数</label>
+        <input type="number" name="gram">
+        ※入力がないと100gの場合の栄養素を表示します！
+        <br>
+        <label for="meal_time">何ご飯？</label>
+        <input type="search" name="meal_time" list="data">
+        <datalist id="data">
+            <option value="朝ご飯"></option>
+            <option value="昼ご飯"></option>
+            <option value="夜ご飯"></option>
+            <option value="間食"></option>
+        </datalist>
+        <br>
+        <label for="file">画像を送信してください</label>
+        <input class="file_choose" type="file" name="file">
+        <br>
+        <input type="submit" value="日記追加">
+    </form>
+{% endblock %}

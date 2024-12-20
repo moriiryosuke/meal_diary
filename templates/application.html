@@ -1,0 +1,33 @@
+<!-- 全体のレイアウト（ヘッダー部分） -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <!-- 最新のレンダリングエンジンを指定 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- モバイルでも読みやすくしてる -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel=stylesheet href="../static/css/style.css">
+    <title>ご飯日記</title>
+</head>
+
+<body>
+    <!-- ヘッダー部分 -->
+    <header>
+        <h1>ご飯日記～栄養管理～</h1>
+        <nav class="url">
+            <ul>
+                <li><a href="/signup">新規登録画面</a></li>
+                <li><a href="/login">ログイン</a></li>
+                <li><a href="/logout">ログアウト</a></li>
+                <li><a href="/new">新規作成画面</a></li>
+            </ul>
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+    <footer>
+    </footer>
+</body>
+</html>
